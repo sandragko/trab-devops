@@ -27,7 +27,7 @@ async def obter_clima(cidade: str):
             "cidade": dados["name"],
             "temperatura": dados["main"]["temp"],
             "descricao": dados["weather"][0]["description"],
-            "velocidade_vento": dados["wind"]["speed"],
+            "umidade": dados["main"]["humidity"]
         }
         return clima
     else:
