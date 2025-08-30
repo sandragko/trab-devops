@@ -18,3 +18,14 @@ jobs:
           path: |
             main.py
             README.md
+            
+  deploy:
+    run-on: ubuntu-latest
+    needs: deliver
+    steps:
+      - uses: actions/download-artifact@v5
+        with:
+          name: projetozipado.zip
+      - name: Display structure of downloaded files
+        run: ls -R
+
