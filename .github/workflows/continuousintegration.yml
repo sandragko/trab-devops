@@ -18,7 +18,6 @@ jobs:
         with:
           linter: pylint
 
-
   docker:
     runs-on: ubuntu-latest
     steps:
