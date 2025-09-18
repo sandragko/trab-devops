@@ -1,4 +1,8 @@
 name: Discord
+
+permissions:
+  contents: read
+
 on:
   - push
 
@@ -13,3 +17,9 @@ jobs:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           template: "avatar-with-link"
           include-extras: true
+
+      - name: Status Alert
+        if: always()
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
